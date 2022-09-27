@@ -5,9 +5,15 @@ interface Dog {
   status: string;
 }
 
+
+const initialDog = {message:"https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_12966.jpg",status:"success"}
+
+
 function App() {
   const [dog, setDog] = useState<Dog>();
-  const [dogHistory, setDogHistory] = useState<Dog[]>([]);
+  const [dogHistory, setDogHistory] = useState<Dog[]>([initialDog]);
+
+  console.log(dogHistory);
 
   const handleGetDog = async () => {
     const response = await fetch(
