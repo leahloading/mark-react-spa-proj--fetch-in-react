@@ -10,10 +10,10 @@ function App() {
 
   const handleGetJoke = async () => {
     const response = await fetch(
-      "https://jokestemp.neillbogie.repl.co/jokes/general/random"
+      "https://dog.ceo/api/breed/hound/images/random"
     );
-    const jsonBody: Joke[] = await response.json();
-    setJoke(jsonBody[0]);
+    const jsonBody: Dog = await response.json();
+    setDog(jsonBody);
   };
 
   // const handleGetJoke = () => {
@@ -40,9 +40,9 @@ function App() {
         <h1>Joke app</h1>
         <p>
           Click the button to trigger a <code>fetch</code> that gets a random
-          joke from an API!
+          dog from an API!
         </p>
-        <button onClick={handleGetJoke}>Get joke</button>
+        <button onClick={handleGetDog}>Get dog</button>
       </div>
     );
   }
