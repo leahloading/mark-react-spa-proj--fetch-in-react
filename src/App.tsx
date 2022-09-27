@@ -6,7 +6,7 @@ interface Dog {
 }
 
 function App() {
-  const [joke, setJoke] = useState<Joke>();
+  const [dog, setDog] = useState<Dog>();
 
   const handleGetJoke = async () => {
     const response = await fetch(
