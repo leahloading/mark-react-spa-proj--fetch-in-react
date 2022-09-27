@@ -8,7 +8,7 @@ interface Dog {
 function App() {
   const [dog, setDog] = useState<Dog>();
 
-  const handleGetJoke = async () => {
+  const handleGetDog = async () => {
     const response = await fetch(
       "https://dog.ceo/api/breed/hound/images/random"
     );
@@ -22,22 +22,19 @@ function App() {
   //     .then((jsonBody: Joke[]) => setJoke(jsonBody[0]));
   // };
 
-  if (joke) {
+  if (dog) {
     return (
       <div>
-        <h1>Joke app</h1>
-        <details>
-          <summary>{joke.setup}</summary>
-          <p>{joke.punchline}</p>
-        </details>
+        <h1>Dog app</h1>
+        <img src={dog.message} alt="" />
         <hr />
-        <button onClick={handleGetJoke}>Get another joke</button>
+        <button onClick={handleGetDog}>Get another dog</button>
       </div>
     );
   } else {
     return (
       <div>
-        <h1>Joke app</h1>
+        <h1>Dog app</h1>
         <p>
           Click the button to trigger a <code>fetch</code> that gets a random
           dog from an API!
