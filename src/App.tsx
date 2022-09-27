@@ -16,6 +16,11 @@ function App() {
   console.log(dogHistory);
 
   const handleGetDog = async () => {
+
+    if (dog) {
+      setDogHistory([...dogHistory, dog])
+    }
+
     const response = await fetch(
       "https://dog.ceo/api/breed/hound/images/random"
     );
