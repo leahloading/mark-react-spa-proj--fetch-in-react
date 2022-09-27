@@ -5,13 +5,13 @@ interface Dog {
   status: string;
 }
 
-
-const initialDog = {message:"https:\/\/images.dog.ceo\/breeds\/hound-basset\/n02088238_12966.jpg",status:"success"}
-
+// the issue wasn't with the dog history array being empty, 
+//it was becuase I was using the same handler to fetch the initial dog as i was to keep the history
+// and when the page loads, the dog state WILL be initially empty. using an if statement to handle this 'dog' state solved the issue
 
 function App() {
   const [dog, setDog] = useState<Dog>();
-  const [dogHistory, setDogHistory] = useState<Dog[]>([initialDog]);
+  const [dogHistory, setDogHistory] = useState<Dog[]>([]);
 
   console.log(dogHistory);
 
