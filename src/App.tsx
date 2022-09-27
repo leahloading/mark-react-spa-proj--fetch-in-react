@@ -7,6 +7,7 @@ interface Dog {
 
 function App() {
   const [dog, setDog] = useState<Dog>();
+  const [dogHistory, setDogHistory] = useState<Dog[]>([]);
 
   const handleGetDog = async () => {
     const response = await fetch(
