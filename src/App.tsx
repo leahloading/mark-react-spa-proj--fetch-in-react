@@ -1,10 +1,8 @@
 import { useState } from "react";
 
-interface Joke {
-  id: number;
-  type: string;
-  setup: string;
-  punchline: string;
+interface Dog {
+  message: string;
+  status: string;
 }
 
 function App() {
