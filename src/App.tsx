@@ -34,6 +34,9 @@ function App() {
   //     .then((jsonBody: Joke[]) => setJoke(jsonBody[0]));
   // };
 
+
+  const dogHistoryList = dogHistory.map((dog, index) => <img src={dog.message} alt="random hound"/>)
+
   if (dog) {
     return (
       <div>
@@ -41,6 +44,11 @@ function App() {
         <img src={dog.message} alt="" />
         <hr />
         <button onClick={handleGetDog}>Get another dog</button>
+        <hr />
+        <section>
+        {dogHistoryList}
+        </section>
+        
       </div>
     );
   } else {
